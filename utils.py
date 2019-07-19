@@ -7,7 +7,7 @@ import numpy as np
 
 
 def save_frame(frame, file_name, flip=True):
-    # flip BGR to RGB
+   
     if flip:
         cv2.imwrite(file_name, np.flip(frame, 2))
     else:
@@ -25,7 +25,7 @@ def init_logging(to_file=False):
     main_logger.addHandler(handler_stream)
 
     if to_file:
-        handler_file = logging.handlers.RotatingFileHandler("debug.log", maxBytes=1024 * 1024 * 400  # 400MB
+        handler_file = logging.handlers.RotatingFileHandler("debug.log", maxBytes=1024 * 1024 * 400  
                                                             , backupCount=10)
         handler_file.setFormatter(formatter)
         main_logger.addHandler(handler_file)
